@@ -1,15 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
-import templeIcon from './assets/icon.png';
+import templeIcon from './assets/logo1.jpg';
 import Home from './pages/Home';
 import About from './pages/About';
 import DailyRituals from './pages/DailyRituals';
+import RitualDetail from './pages/RitualDetail';
+import BookingSlot from './pages/BookingSlot';
 import Festivals from './pages/Festivals';
 import Shivaratri from './pages/Shivaratri';
 import BadaOsha from './pages/BadaOsha';
+import Sitalasasti from './pages/Sitalasasti';
+import MakarSankranti from './pages/MakarSankranti';
+import PanaSankranti from './pages/PanaSankranti';
+import NagaChaturthi from './pages/NagaChaturthi';
 import VariousFunctions from './pages/VariousFunctions';
+import PaushaPurnima from './pages/PaushaPurnima';
+import DolaPurnima from './pages/DolaPurnima';
+import KartikaPurnima from './pages/KartikaPurnima';
 import DevoteeServices from './pages/DevoteeServices';
 import DynamicMedia from './pages/DynamicMedia';
 import Administration from './pages/Administration';
@@ -21,12 +30,12 @@ import './App.css';
 const PageTransitionSplash = () => {
   const location = useLocation();
   const [isPageLoading, setIsPageLoading] = useState(false);
-  const [hasMounted, setHasMounted] = useState(false);
+  const hasMounted = useRef(false);
 
   useEffect(() => {
-    if (!hasMounted) {
-      setHasMounted(true);
-      return undefined;
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
     }
 
     setIsPageLoading(true);
@@ -35,7 +44,7 @@ const PageTransitionSplash = () => {
     }, 450);
 
     return () => window.clearTimeout(timer);
-  }, [location.pathname, hasMounted]);
+  }, [location.pathname]);
 
   if (!isPageLoading) {
     return null;
@@ -99,6 +108,16 @@ const PageRevealObserver = () => {
   return null;
 };
 
+const ScrollToPageTop = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [location.pathname]);
+
+  return null;
+};
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -127,6 +146,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToPageTop />
       <PageTransitionSplash />
       <PageRevealObserver />
       <Navbar />
@@ -135,10 +155,21 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/rituals" element={<DailyRituals />} />
+          <Route path="/rituals/mangala-alati" element={<RitualDetail ritualKey="mangalaAlati" />} />
+          <Route path="/rituals/dwarapuja-mahasnana" element={<RitualDetail ritualKey="dwarapujaMahasnana" />} />
+          <Route path="/rituals/pahada" element={<RitualDetail ritualKey="pahada" />} />
+          <Route path="/booking-slot" element={<BookingSlot />} />
           <Route path="/festivals" element={<Festivals />} />
           <Route path="/shivaratri" element={<Shivaratri />} />
           <Route path="/bada-osha" element={<BadaOsha />} />
+          <Route path="/sitalasasti" element={<Sitalasasti />} />
+          <Route path="/makar-sankranti" element={<MakarSankranti />} />
+          <Route path="/pana-sankranti" element={<PanaSankranti />} />
+          <Route path="/naga-chaturthi" element={<NagaChaturthi />} />
           <Route path="/various-functions" element={<VariousFunctions />} />
+          <Route path="/pausha-purnima" element={<PaushaPurnima />} />
+          <Route path="/dola-purnima" element={<DolaPurnima />} />
+          <Route path="/kartika-purnima" element={<KartikaPurnima />} />
           <Route path="/services" element={<DevoteeServices />} />
           <Route path="/media" element={<DynamicMedia />} />
           <Route path="/admin" element={<Administration />} />

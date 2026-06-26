@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import templeIcon from '../../assets/icon.png';
+import templeIcon from '../../assets/logo1.jpg';
 import './Navbar.css';
 
 const Navbar = () => {

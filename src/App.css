@@ -22,6 +22,8 @@
   width: min(180px, 48vw);
   aspect-ratio: 1;
   object-fit: contain;
+  mix-blend-mode: multiply;
+  background: transparent;
   animation: splash-pulse 1.4s ease-in-out infinite;
 }
 

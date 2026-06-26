@@ -1,4 +1,4 @@
-import templeIcon from '../assets/icon.png';
+import templeIcon from '../assets/logo1.jpg';
 
 const ScreenSort = () => {
   return (

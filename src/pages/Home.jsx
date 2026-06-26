@@ -1,45 +1,33 @@
 
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import slid from '../assets/slid.webp';
-import slide1 from '../assets/slid1.webp';
-import slide2 from '../assets/slid2.webp';
-import slide3 from '../assets/slide3.webp';
-import slide4 from '../assets/slide4.webp';
-import slide5 from '../assets/slide5.webp';
-import dbltImage from '../assets/dblt.jpg';
+import slide1 from '../assets/slid1.jpg';
+import slide2 from '../assets/slid2.jpg';
+import slide3 from '../assets/slid3.jpg';
+import slide4 from '../assets/slid4.jpg';
+import dbltImage from '../assets/dblt.jpeg';
 import './Home.css';
 
 const slides = [
   {
-    image: slid,
+    image: slide1,
     title: 'Welcome to Dhabaleswara Mandir',
     subtitle: 'Experience the joy of devotion',
   },
   {
-    image: slide1,
+    image: slide2,
     title: 'Divine Serenity',
     subtitle: 'Connect with the divine in peace',
   },
   {
-    image: slide2,
+    image: slide3,
     title: 'Chant. Dance. Feast. Serve.',
     subtitle: 'A sacred place for prayer and peace',
   },
   {
-    image: slide3,
+    image: slide4,
     title: 'Celebrate Every Festival',
     subtitle: 'Join the temple community in devotion',
-  },
-  {
-    image: slide4,
-    title: 'Daily Rituals and Darshan',
-    subtitle: 'Begin each day with divine blessings',
-  },
-  {
-    image: slide5,
-    title: 'Serve With Love',
-    subtitle: 'Be part of seva, tradition, and togetherness',
   },
 ];
 
@@ -118,18 +106,20 @@ const Home = () => {
       <div className="description-section">
         <h1 className="reveal">Dhabaleswara Mandir<span style={{ fontSize: '0.6em', color: 'var(--text)' }}></span></h1>
         <p className="reveal">
-          Dhabaleswar Temple is dedicated to the worship of Lord Shiva. It is situated at a distance of 27 km from the city of Cuttack, Odisha, India, on the riverine island of Lord Dhabaleshwar. The temple, located on an island on River Mahanadi, is embellished with stone carvings that date back to the early 10th and 11th century. The serene ambiance, in which the temple is situated, inspires spiritual feeling among one and all.
+          Tucked away in the heart of Gurujanga, Khordha town, Odisha, India, the historic Baba Dhabaleswara Mandir stands as a vital spiritual landmark and a cherished cultural anchor for the entire region. Dedicated entirely to the worship of Lord Shiva, this vibrant shrine has cultivated a rich legacy of devotion spanning over two centuries. The temple is especially revered for its unique presiding deity—a rare Patala Phita Shivalinga, which translates to a partially submerged or underworld deity that symbolizes the deep cosmic roots of Lord Shiva. This sacred idol draws generations of passionate devotees who travel from all over the district to offer prayers, perform rituals, and seek divine blessings.The temple complex is beautifully maintained, offering a clean, quiet, and tranquil environment that serves as a perfect sanctuary for those looking to escape the bustle of daily life and find inner peace. During major Hindu festivals such as Maha Shivaratri, Kartika Purnima, and the locally celebrated Bada Osha, the entire atmosphere transforms. The peaceful grounds come alive with traditional oil lamps, vibrant decorations, and the rhythmic chanting of Vedic hymns, elevating the spiritual energy of the site. Ultimately, the serene and sacred ambiance in which the temple is situated seamlessly blends historical heritage with a profound sense of divinity, inspiring deep spiritual feelings among one and all.
         </p>
       </div>
 
       <section className="mythical-origin-section">
         <div className="mythical-origin-container">
-          <div className="mythical-origin-header reveal">
-            <h2>Mythical Origin</h2>
-          </div>
           <div className="mythical-origin-content">
-            <div className="mythical-origin-image reveal">
-              <img src={dbltImage} alt="Lord Dhabaleswar Temple Mythical Origin" />
+            <div className="mythical-origin-image-container">
+              <div className="mythical-origin-header reveal" style={{ marginBottom: '15px' }}>
+                <h2>Mythical Origin</h2>
+              </div>
+              <div className="mythical-origin-image reveal">
+                <img src={dbltImage} alt="Lord Dhabaleswar Temple Mythical Origin" />
+              </div>
             </div>
             <div className="mythical-origin-text reveal">
               <p>
@@ -138,6 +128,11 @@ const Home = () => {
 
               <p>
                 The sanyassin disappeared and the thief realized who had come to his aid. He confessed and apologized to the crowd, and took a vow to spend the rest of his life in the service of the Lord. The act of turning a black calf to white caused Lord Shiva to be also known as Dhabaleswara.
+              </p>
+              <p>
+                To the absolute shock and bewilderment of the entire gathering, the calf was no longer black. Through a supreme act of divine illusion, its coat had been transformed into a pristine, snow-white color. Stunned by this undeniable visual proof, the crowd concluded they had falsely accused an innocent man. Ashamed of their aggression, they immediately disperses and let the traveler go free.
+              </p>
+              <p>As the crowd scattered, the enigmatic Sanyassin suddenly vanished into thin air. Standing alone in the quiet courtyard, the thief instantly realized the profound truth. It was not a mere monk who had saved him, but the Supreme Lord of the Universe who had answered his desperate plea.
               </p>
             </div>
           </div>
@@ -166,13 +161,115 @@ const Home = () => {
             </div>
             <div className="attraction-card reveal">
               <h3>
-                <Link to="/festivals" style={{ color: 'inherit', textDecoration: 'none' }}>
-                  Various Functions
+                <Link to="/sitalasasti" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  Sitalasasti
                 </Link>
               </h3>
-              <p>Festivals like Pausha purnima, Dola purnima, and Kartika purnima are celebrated here with traditional fervor.</p>
+              <p>The divine marriage of Lord Shiva and Goddess Parvati, celebrated with grand processions.</p>
+            </div>
+            <div className="attraction-card reveal">
+              <h3>
+                <Link to="/makar-sankranti" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  Makar Sankranti
+                </Link>
+              </h3>
+              <p>Celebrating the transition of the Sun with holy dips and special Makar Chaula offering.</p>
+            </div>
+            <div className="attraction-card reveal">
+              <h3>
+                <Link to="/pausha-purnima" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  Pausha Purnima
+                </Link>
+              </h3>
+              <p>A significant lunar event in the month of Pausha with special abhishek and divine rituals.</p>
+            </div>
+            <div className="attraction-card reveal">
+              <h3>
+                <Link to="/dola-purnima" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  Dola Purnima
+                </Link>
+              </h3>
+              <p>The festival of colors celebrated with a divine procession and traditional fervor.</p>
+            </div>
+            <div className="attraction-card reveal">
+              <h3>
+                <Link to="/kartika-purnima" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  Kartika Purnima
+                </Link>
+              </h3>
+              <p>Sacred Boita Bandana celebrating the maritime glory of ancient Odisha at the holy Mahanadi.</p>
+            </div>
+            <div className="attraction-card reveal">
+              <h3>
+                <Link to="/naga-chaturthi" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  Naga Chaturthi
+                </Link>
+              </h3>
+              <p>A sacred serpent worship festival observed with prayers for protection and family welfare.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="architecture-section">
+        <div className="architecture-container">
+          <div className="architecture-header reveal">
+            <h2>Architecture</h2>
+          </div>
+          <div className="architecture-content reveal">
+            <p>
+              Dating back to the early 10th and 11th centuries CE, the original temple structure of Dhabaleswara Mandir was constructed under the royal patronage of the Somavamshi dynasty by King Yayati Keshari. Nestled on a serene riverine island in the Mahanadi River, the site was strategically chosen on a natural rocky hillock to elevate the sacred shrine, safeguarding it against seasonal floods over the centuries. In later centuries, the temple underwent extensive renovations, expansions, and repairs by the rulers of the Khurda and Athgarh regions, transforming it into the resilient complex seen today.
+            </p>
+            <p>
+              Architecturally, the temple stands as a magnificent example of the classic Kalinga style of temple architecture. Built predominantly from durable sandstone, the complex features a soaring Rekha Deula (curvilinear spire) housing the sacred Shiva lingam, which rises beautifully beside a pyramidal Jagamohana (assembly hall). The entire structure is adorned with intricate stone carvings portraying mythological scenes, animals, and traditional Shaivite iconography. This timeless stone craftsmanship, paired with its isolated location and modern suspension footbridge, blends historical architectural grandeur seamlessly with its natural island landscape.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="location-page home-location-section">
+        <div className="festival-detail-hero location-heading">
+          <h1>Location</h1>
+        </div>
+
+        <div className="location-section" style={{ gridTemplateColumns: '1fr' }}>
+          <article className="location-info-card">
+            <p>
+              The Dhabaleswar Temple located in Khordha, specifically in the
+              Gurujanga area, is a highly revered Hindu shrine dedicated to Lord
+              Shiva. It serves as an important spiritual and cultural hub for local
+              devotees in the region.
+            </p>
+            <p>
+              The temple is known locally as a peaceful place for daily worship,
+              family prayers, and festival gatherings. Devotees visit to seek the
+              blessings of Baba Dhabaleswara for health, protection, prosperity, and
+              spiritual strength.
+            </p>
+            <p>
+              Its location in Gurujanga makes it easily connected with Khordha town
+              and nearby villages, allowing the shrine to remain closely woven into
+              the religious and cultural life of the surrounding community.
+            </p>
+
+            <div className="location-detail-list">
+              <div>
+                <span>Location</span>
+                <strong>Gurujanga, Khordha, Odisha, India</strong>
+              </div>
+              <div>
+                <span>Primary Deity</span>
+                <strong>Lord Shiva, Baba Dhabaleswara</strong>
+              </div>
+              <div>
+                <span>Significance</span>
+                <strong>
+                  A local pilgrimage site visited during Maha Shivaratri and Bada
+                  Osha celebrations.
+                </strong>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
     </div>

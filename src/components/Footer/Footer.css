@@ -1,9 +1,28 @@
 .footer {
-  background-color: #f6eeee;
+  background-color: #f2dd8b;
   color: #151515;
   padding: 0;
   margin-top: 20px;
   position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../assets/footerimg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.12;
+  filter: contrast(85%) brightness(95%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .footer-top-frame {
@@ -40,9 +59,12 @@
 }
 
 .footer-logo img {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: auto;
   object-fit: contain;
+  display: block;
+  mix-blend-mode: multiply;
+  filter: contrast(1.08) saturate(1.05);
 }
 
 .footer-brand-text {
@@ -159,7 +181,7 @@
 
 .footer-bottom {
   border-top: 1px solid rgba(79, 43, 22, 0.18);
-  background: #f8f4ed;
+  background: #ffeeb3;
   padding: 2px 0;
 }
 
@@ -185,7 +207,7 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
   .footer-links-section {
     grid-template-columns: repeat(2, 1fr);
   }
